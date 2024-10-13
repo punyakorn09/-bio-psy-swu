@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตรวจสอบผลการเรียน</title>
+    <link rel="stylesheet" href="styles.css"> <!-- เพิ่มลิงก์ไฟล์ CSS เพื่อปรับแต่งสไตล์ -->
+</head>
+<body>
+    <div class="container">
+        <h2>ตรวจสอบผลการเรียน</h2>
+        <form id="student-form" onsubmit="return getStudentGrades();">
+            <div class="form-group">
+                <label for="student-id">รหัสประจำตัวนักเรียน:</label>
+                <input type="text" id="student-id" name="student-id" required>
+            </div>
+            <div class="form-group">
+                <label for="citizen-id">เลขบัตรประชาชน:</label>
+                <input type="text" id="citizen-id" name="citizen-id" required>
+            </div>
+            <button type="submit">แสดงผลการเรียน</button>
+        </form>
+        <div id="result" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        function getStudentGrades() {
+            // ดึงค่าจากฟอร์ม
+            const studentId = document.getElementById('student-id').value;
+            const citizenId = document.getElementById('citizen-id').value;
+            
+            // ตัวอย่างการตรวจสอบค่าที่กรอก
+            if (studentId && citizenId) {
+                // แสดงผลการเรียนใน div ที่มี id "result"
+                document.getElementById('result').innerHTML =
+                    `<h3>ผลการเรียนของนักเรียน รหัส ${studentId}</h3>
+                    <p>เกรดเฉลี่ย: 3.85</p>
+                    <p>หมายเหตุ: ข้อมูลนี้เป็นตัวอย่างเท่านั้น</p>`;
+            } else {
+                document.getElementById('result').innerHTML =
+                    '<p style="color: red;">กรุณากรอกข้อมูลให้ครบถ้วน</p>';
+            }
+            
+            // หยุดการ reload หน้าเว็บ
+            return false;
+        }
+    </script>
+</body>
+</html>
