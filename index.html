@@ -11,11 +11,11 @@
         <h2>ตรวจสอบผลการเรียน</h2>
         <form id="student-form" onsubmit="return getStudentGrades();">
             <div class="form-group">
-                <label for="student-id">รหัสประจำตัวนักเรียน:</label>
+                <label for="student-id">รหัสประจำตัวนักศึกษา:</label>
                 <input type="text" id="student-id" name="student-id" required>
             </div>
             <div class="form-group">
-                <label for="citizen-id">เลขบัตรประชาชน:</label>
+                <label for="citizen-id">เลขท้าย 4 ตัวบัตรประชาชน:</label>
                 <input type="text" id="citizen-id" name="citizen-id" required>
             </div>
             <button type="submit">แสดงผลการเรียน</button>
@@ -33,9 +33,11 @@
             if (studentId && citizenId) {
                 // แสดงผลการเรียนใน div ที่มี id "result"
                 document.getElementById('result').innerHTML =
-                    `<h3>ผลการเรียนของนักเรียน รหัส ${studentId}</h3>
-                    <p>เกรดเฉลี่ย: 3.85</p>
-                    <p>หมายเหตุ: ข้อมูลนี้เป็นตัวอย่างเท่านั้น</p>`;
+                    `<h3>ผลการเรียนของนักศึกษา รหัส ${studentId}</h3>
+                    <p>คะแนนปรนัย: 18</p>
+                    <p>คะแนนอัตนัย: 9</p>
+                    <p>คะแนนรวม: 27</p>
+                    <p>คะแนนรวมเต็ม: 30</p>`;
             } else {
                 document.getElementById('result').innerHTML =
                     '<p style="color: red;">กรุณากรอกข้อมูลให้ครบถ้วน</p>';
