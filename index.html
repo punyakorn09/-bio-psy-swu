@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 <label for="citizen-id">เลขท้าย 4 ตัวบัตรประชาชน:</label>
-                <input type="text" id="citizen-id" name="citizen-id" required>
+                <input type="text" id="citizen-id" name="citizen-id" required maxlength="4">
             </div>
             <button type="submit">แสดงผลการเรียน</button>
         </form>
@@ -34,9 +34,10 @@
                 // แสดงผลการเรียนใน div ที่มี id "result"
                 document.getElementById('result').innerHTML =
                     `<h3>ผลการเรียนของนักศึกษา รหัส ${studentId}</h3>
-                    <p>คะแนนปรนัย: 18</p>
-                    <p>คะแนนอัตนัย: 9</p>
-                    <p>คะแนนรวม: 27</p>
+                    <p>ชื่อ-นามสกุล: นายสมชาย ใจดี</p>
+                    <p>คะแนนปรนัย: 15</p>
+                    <p>คะแนนอัตนัย: 10</p>
+                    <p>คะแนนรวม: 25</p>
                     <p>คะแนนรวมเต็ม: 30</p>`;
             } else {
                 document.getElementById('result').innerHTML =
